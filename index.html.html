@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polityka Prywatności / Privacy Policy - GeoHeroes</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #e2e8f0;
+            --primary-color: #38bdf8;
+            --card-bg: #1e293b;
+            --accent-color: #ffc174;
+            --border-color: #334155;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-top: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+        p, li {
+            font-size: 1rem;
+            color: #94a3b8;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .lang-switch {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .lang-btn {
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .lang-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        .lang-btn.active {
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            border-color: var(--primary-color);
+        }
+        .section-en {
+            display: none;
+        }
+        .highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function switchLanguage(lang) {
+            if (lang === 'pl') {
+                document.querySelectorAll('.section-pl').forEach(el => el.style.display = 'block');
+                document.querySelectorAll('.section-en').forEach(el => el.style.display = 'none');
+                document.getElementById('btn-pl').classList.add('active');
+                document.getElementById('btn-en').classList.remove('active');
+            } else {
+                document.querySelectorAll('.section-pl').forEach(el => el.style.display = 'none');
+                document.querySelectorAll('.section-en').forEach(el => el.style.display = 'block');
+                document.getElementById('btn-pl').classList.remove('active');
+                document.getElementById('btn-en').classList.add('active');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GeoHeroes</h1>
+            <div class="lang-switch">
+                <button id="btn-pl" class="lang-btn active" onclick="switchLanguage('pl')">Polski</button>
+                <button id="btn-en" class="lang-btn" onclick="switchLanguage('en')">English</button>
+            </div>
+        </header>
+
+        <!-- POLISH VERSION -->
+        <div class="section-pl">
+            <div class="card">
+                <h2>Polityka Prywatności aplikacji GeoHeroes</h2>
+                <p>Ostatnia aktualizacja: 26 maja 2026 r.</p>
+                <p>Niniejsza Polityka Prywatności określa zasady gromadzenia, wykorzystywania i udostępniania informacji o użytkownikach korzystających z aplikacji mobilnej <strong>GeoHeroes</strong> (zwanej dalej "Aplikacją").</p>
+            </div>
+
+            <h2>1. Informacje ogólne</h2>
+            <p>Aplikacja GeoHeroes służy do odkrywania świata za pomocą lokalizacji GPS (koncepcja Fog of War / Mgła Wojny). Wszelkie dane osobowe przetwarzane są zgodnie z obowiązującymi przepisami prawa, w szczególności z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 (RODO).</p>
+
+            <h2>2. Zbieranie i wykorzystywanie danych lokalizacyjnych (GPS)</h2>
+            <p>Aplikacja opiera się na usługach lokalizacyjnych w celu prawidłowego działania. Aby zmapować odblokowane heksagony, śledzić postępy na szlakach turystycznych oraz przyznawać odznaki, GeoHeroes wymaga dostępu do:</p>
+            <ul>
+                <li><span class="highlight">Dokładnej lokalizacji urządzenia (GPS)</span> w czasie korzystania z aplikacji (foreground).</li>
+                <li><span class="highlight">Lokalizacji w tle (background location)</span> – opcjonalnie, jeśli użytkownik uruchomi tryb ciągłego odkrywania (aktywnego śledzenia trasy przy wygaszonym ekranie). Dane te są niezbędne, by aplikacja mogła odblokowywać heksagony i aktualizować postęp szlaku podczas przemieszczania się bez potrzeby trzymania włączonego ekranu telefonu.</li>
+            </ul>
+            <p>Dane lokalizacyjne są przetwarzane lokalnie na urządzeniu oraz przesyłane do naszej bezpiecznej bazy danych w chmurze (Firestore) wyłącznie w celu zapisu postępów zalogowanego użytkownika.</p>
+
+            <h2>3. Logowanie i dane autoryzacyjne</h2>
+            <p>Aplikacja umożliwia logowanie przy użyciu konta Google (Google Sign-In). W procesie tym pobieramy wyłącznie podstawowe dane profilowe użytkownika:</p>
+            <ul>
+                <li>Adres e-mail</li>
+                <li>Imię i nazwisko (nazwę użytkownika)</li>
+                <li>Identyfikator użytkownika</li>
+                <li>Zdjęcie profilowe (opcjonalnie)</li>
+            </ul>
+            <p>Dane te służą do jednoznacznej identyfikacji konta i synchronizacji postępów gry na różnych urządzeniach użytkownika.</p>
+
+            <h2>4. Przechowywanie danych i bezpieczeństwo</h2>
+            <p>Dane użytkowników (odblokowane heksagony, postęp wyzwań, statystyki, zdobyte odznaki) są przechowywane lokalnie na urządzeniu oraz synchronizowane z usługą Google Firebase (Firestore). Dbamy o najwyższe standardy bezpieczeństwa danych. Nie sprzedajemy ani nie udostępniamy zebranych danych podmiotom trzecim.</p>
+
+            <h2>5. Uprawnienia urządzenia</h2>
+            <p>Aplikacja może prosić o dostęp do następujących funkcji urządzenia:</p>
+            <ul>
+                <li><strong>Lokalizacja (GPS)</strong> – w celu odkrywania terenu na mapie.</li>
+                <li><strong>Powiadomienia push</strong> – w celu przypominania o codziennych wyzwaniach i informowania o statusie działania aplikacji w tle.</li>
+            </ul>
+
+            <h2>6. Prawa Użytkownika</h2>
+            <p>Każdy użytkownik ma prawo do wglądu w swoje dane, ich poprawiania, a także żądania ich usunięcia. Aby całkowicie usunąć konto oraz powiązane dane z bazy danych, użytkownik może skorzystać z opcji usunięcia konta w ustawieniach aplikacji lub skontaktować się z administratorem pod adresem e-mail podanym w sekcji kontaktowej.</p>
+
+            <h2>7. Kontakt</h2>
+            <p>W przypadku pytań dotyczących niniejszej Polityki Prywatności prosimy o kontakt mailowy: <span class="highlight">geoheroes599@gmail.com</span></p>
+        </div>
+
+        <!-- ENGLISH VERSION -->
+        <div class="section-en">
+            <div class="card">
+                <h2>Privacy Policy of the GeoHeroes Application</h2>
+                <p>Last updated: May 26, 2026</p>
+                <p>This Privacy Policy outlines the rules for collecting, using, and sharing information about users of the <strong>GeoHeroes</strong> mobile application (hereinafter referred to as the "Application").</p>
+            </div>
+
+            <h2>1. General Information</h2>
+            <p>The GeoHeroes application is designed to explore the world using GPS location (the Fog of War concept). All personal data is processed in accordance with applicable laws, in particular the General Data Protection Regulation (GDPR).</p>
+
+            <h2>2. Collection and Use of Location Data (GPS)</h2>
+            <p>The Application relies on location services to function correctly. To map unlocked hexagons, track progress on hiking trails, and award badges, GeoHeroes requires access to:</p>
+            <ul>
+                <li><span class="highlight">Precise device location (GPS)</span> while using the application (foreground).</li>
+                <li><span class="highlight">Background location</span> – optionally, if the user enables continuous exploration mode (active route tracking with the screen off). This data is necessary for the app to unlock hexagons and update trail progress while moving without needing to keep the screen turned on.</li>
+            </ul>
+            <p>Location data is processed locally on the device and sent to our secure cloud database (Firestore) solely to save the logged-in user's progress.</p>
+
+            <h2>3. Login and Authentication Data</h2>
+            <p>The Application allows logging in using a Google Account (Google Sign-In). During this process, we retrieve only basic user profile information:</p>
+            <ul>
+                <li>Email address</li>
+                <li>First and last name (username)</li>
+                <li>User ID</li>
+                <li>Profile picture (optional)</li>
+            </ul>
+            <p>This data is used to uniquely identify the account and synchronize game progress across the user's devices.</p>
+
+            <h2>4. Data Storage and Security</h2>
+            <p>User data (unlocked hexagons, challenge progress, statistics, badges earned) is stored locally on the device and synchronized with Google Firebase (Firestore). We maintain the highest standards of data security. We do not sell or share collected data with third parties.</p>
+
+            <h2>5. Device Permissions</h2>
+            <p>The Application may request access to the following device features:</p>
+            <ul>
+                <li><strong>Location (GPS)</strong> – to uncover territory on the map.</li>
+                <li><strong>Push Notifications</strong> – to remind you of daily challenges and notify you about the background service status.</li>
+            </ul>
+
+            <h2>6. User Rights</h2>
+            <p>Every user has the right to access their data, correct it, or request its deletion. To completely delete the account and associated data from the database, the user can use the delete account option in the application settings or contact the administrator at the email address provided in the contact section.</p>
+
+            <h2>7. Contact</h2>
+            <p>If you have any questions regarding this Privacy Policy, please contact us by email: <span class="highlight">geoheroes599@gmail.com</span></p>
+        </div>
+    </div>
+</body>
+</html>
