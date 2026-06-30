@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GeoHeroes - Unveil the World</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#abb9d2",
+                        "surface-container-high": "#222a3d",
+                        "on-tertiary-fixed-variant": "#004c6e",
+                        "secondary-fixed": "#d5e3fd",
+                        "secondary-fixed-dim": "#b9c7e0",
+                        "on-tertiary-container": "#004869",
+                        "on-surface": "#dae2fd",
+                        "primary": "#ffc174",
+                        "surface-tint": "#ffb95f",
+                        "surface-container": "#171f33",
+                        "tertiary": "#98d3ff",
+                        "tertiary-fixed": "#c9e6ff",
+                        "on-secondary-fixed-variant": "#3a485c",
+                        "tertiary-fixed-dim": "#89ceff",
+                        "surface-container-highest": "#2d3449",
+                        "on-error": "#690005",
+                        "outline": "#a08e7a",
+                        "primary-fixed-dim": "#ffb95f",
+                        "secondary": "#b9c7e0",
+                        "on-primary-container": "#613b00",
+                        "on-surface-variant": "#d8c3ad",
+                        "on-primary-fixed-variant": "#653e00",
+                        "outline-variant": "#534434",
+                        "inverse-surface": "#dae2fd",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed": "#ffddb8",
+                        "on-tertiary": "#00344d",
+                        "surface-dim": "#0b1326",
+                        "surface-variant": "#2d3449",
+                        "surface-bright": "#31394d",
+                        "inverse-on-surface": "#283044",
+                        "primary-container": "#f59e0b",
+                        "surface-container-low": "#131b2e",
+                        "on-background": "#dae2fd",
+                        "surface": "#0b1326",
+                        "inverse-primary": "#855300",
+                        "on-secondary-fixed": "#0d1c2f",
+                        "on-secondary": "#233144",
+                        "background": "#0b1326",
+                        "tertiary-container": "#42bbff",
+                        "on-primary-fixed": "#2a1700",
+                        "surface-container-lowest": "#060e20",
+                        "on-tertiary-fixed": "#001e2f",
+                        "secondary-container": "#3c4a5e",
+                        "error": "#ffb4ab",
+                        "on-primary": "#472a00",
+                        "error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "gutter": "16px",
+                        "xl": "64px",
+                        "lg": "40px",
+                        "edge-margin": "16px",
+                        "md": "24px",
+                        "base": "8px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col relative overflow-hidden font-body-md antialiased selection:bg-primary/30 selection:text-primary">
+<!-- Background Fog / Map Representation -->
+<div class="absolute inset-0 z-0 bg-cover bg-center opacity-60" data-alt="A dark, moody, cinematic digital map interface representing a 'fog of war' environment. The scene is enveloped in deep slate and obsidian shadows. Faint, glowing hexagonal grid lines in a subtle amber/gold hue barely pierce through the misty atmospheric fog. The visual style is highly technical, mysterious, and modern, reminiscent of a high-end exploration game HUD, using a stark contrast between deep blacks and sharp, glowing navigational UI elements." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDo-w27pVIWuJJjHBmrBE83u_jsUocW7xyxBD77wqwldfDFOnk8lHSWvpVNLb-zCYcZFg8MXPhivEHpfPDv6OFSRtpMHVwDJV3JWPptVlIoe2g3tXjL-tKi8pzb8Q4M9XVChouSj48V6adV_BxKbxeEqo8_RQO68p7Cow4evcj13mEXgmkrD05qcyK_OZh23JlPBPXycX26NAMix5fUokr_GJy4MIYXQt8Gemls-AdQ35L3pBSrc-6oa0PG8Nd2IVjNb_28f0BZPXLd');">
+</div>
+<!-- Radial Gradient Overlay to focus on center -->
+<div class="absolute inset-0 z-0 bg-radial-gradient from-transparent via-background/80 to-background"></div>
+<!-- Main Content Container -->
+<main class="relative z-10 flex-1 flex flex-col items-center justify-between px-edge-margin py-xl w-full max-w-md mx-auto">
+<!-- Header Section -->
+<header class="flex flex-col items-center text-center mt-lg">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight mb-sm drop-shadow-[0_0_15px_rgba(255,193,116,0.2)]">
+                GeoHeroes
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[280px]">
+                The world is hidden in shadows. Start walking to reveal it.
+            </p>
+</header>
+<!-- Central Discovery Compass Section -->
+<div class="flex flex-col items-center justify-center w-full flex-1 my-lg relative">
+<!-- Glassmorphic Compass Container -->
+<div class="relative w-64 h-64 flex items-center justify-center rounded-full bg-surface-container/60 backdrop-blur-xl border border-white/10 shadow-[0_0_40px_rgba(255,193,116,0.15)]">
+<!-- Inner Decorative Rings -->
+<div class="absolute inset-sm rounded-full border border-primary/20 border-dashed animate-[spin_60s_linear_infinite]"></div>
+<div class="absolute inset-md rounded-full border border-primary/10"></div>
+<!-- Glowing Compass Icon -->
+<span class="material-symbols-outlined text-[80px] text-primary drop-shadow-[0_0_15px_rgba(255,193,116,0.5)] transform -rotate-45" data-weight="fill">
+                    explore
+                </span>
+<!-- Compass Tick Marks -->
+<div class="absolute top-4 left-1/2 -translate-x-1/2 w-1 h-3 bg-primary rounded-full"></div>
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-1 h-2 bg-on-surface-variant/50 rounded-full"></div>
+<div class="absolute left-4 top-1/2 -translate-y-1/2 w-2 h-1 bg-on-surface-variant/50 rounded-full"></div>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 w-2 h-1 bg-on-surface-variant/50 rounded-full"></div>
+</div>
+<!-- Discovery Label -->
+<div class="mt-xl bg-surface-container-high/80 backdrop-blur-md border border-white/5 rounded-full px-md py-sm flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-label-md">
+                    my_location
+                </span>
+<span class="font-label-md text-label-md text-on-surface tracking-wide">
+                    Nearest Discovery: Royal Castle (850m North)
+                </span>
+</div>
+</div>
+<!-- Action & Footer Section -->
+<div class="w-full flex flex-col items-center gap-md mb-lg">
+<!-- Primary CTA -->
+<button class="w-full max-w-[320px] h-[56px] bg-primary text-on-primary rounded-lg font-label-md text-label-md flex items-center justify-center hover:bg-primary-container transition-colors shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]">
+                Start Exploring
+            </button>
+<!-- Technical Secondary Text -->
+<div class="flex items-center gap-xs mt-sm opacity-60">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">
+                    hexagon
+                </span>
+<p class="font-label-sm text-label-sm text-on-surface-variant text-center max-w-[260px]">
+                    GeoHeroes uses H3 Hexagonal Grid for precise world tracking.
+                </p>
+</div>
+</div>
+</main>
+</body></html>
